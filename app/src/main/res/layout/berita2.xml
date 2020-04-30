@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_nav"
+        android:theme="@style/ToolbarTheme">
+
+        <TextView
+            android:textAlignment="center"
+            android:text="Destinasi"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:layout_below="@+id/songkem"
+            android:fontFamily="@font/knight_brush_demo"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:background="@drawable/berita2" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+    <TextView
+        android:textAlignment="textStart"
+        android:id="@+id/text1"
+        android:text="Sampang Raih Gelar Raki Berbusana Terbaik 2020"
+        android:textColor="#222222"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:textAlignment="textStart"
+        android:id="@+id/text2"
+        android:text='Selasa, 10 Maret 2020 pukul 08.54'
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:drawablePadding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"/>
+
+    <TextView
+        android:textAlignment="textStart"
+        android:text='Pemenang Busana Terbaik diraih Raki Sampang.
+PASURUAN – Kabupaten Sampang berhasil membawa pulang penghargaan Busana Terbaik pada Malam Grand Final untuk Kategori Raki yang dibawakan oleh Fatimatus Zahroh dengan mengenakan Batik Tanduk Majeng.
+Malam Grand Final Pemilihan Raka Raki 2020 Jawa Timur tersebut digelar Sabtu, (07/03/2020) di Graha Candra Wilwatikta Pandaan, Pasuruan yang dibuka langsung oleh Gubernur Khofifah Indar Parawansa.
+ 
+Pada malam tersebut, Bupati H. Slamet Junaidi beserta istri yang merupakan Ketua TP PKK Hj. Mimin Slamet Junaidi hadir langsung untuk memberikan support kepada Perwakilan Duta Raka Raki dari Sampang.
+“Alhamdulillah Batik khas Sampang yang dikenakan oleh Raki Faza menjadi Busana yang terbaik di Jawa Timur, hal ini merupakan suatu kebanggaan bagi kita,” ucap Bupati Sampang H. Slamet Junaidi.
+Dirinya berpesan kepada para Raka – Raki Perwakilan dari Sampang untuk menjadi pioner agar memperkenalkan potensi baik wisata maupun kebudayaan daerah ke khalayak luar.
+Di tempat yang sama, Gubernur Jawa Timur Khofifah Indar Parawansa ketika membuka acara menyampaikan
+Bupati Sampang beserta istri mensupport langsung.
+jika keberadaan Raka Raki harus mampu membawa perubahan pola hidup masyarakat yang berpikir dan mampu memandang kesejahteraan ekonomi di masa mendatang melalui sektor pariwisata. 
+Selain itu, duta wisata raka raki 2020 harus mampu mengeksplorasi potensi wisata Jawa Timur sebagai budaya lokal yang harus terus dipertahankan.
+ 
+“Kita punya budaya lokal, mulai budaya mataraman, Madura, pantura, maupun budaya arek. Ini sungguh luar biasa dan merupakan aset milik Jawa Timur. Tugas kalian (Raka Raki, red) untuk mengeksplorasi dan menjadikan Jawa Timur menjadi luar biasa,” pintanya.
+Seperti diketahui, pemilihan duta duta wisata dari 38 kabupaten kota telah dimulai tanggal 4 Maret hingga 7 Maret. Diawali dari proses presentasi dan wawancara, selanjutnya terpilihlah sepuluh besar Raka raki. Selanjutnya mengerucut untuk dipilih lima besar Raka raki, selanjutnya dipilih menjadi tiga besar, selanjutnya dipilih Duta Wisata Raka Raki 2020. (dhe)'
+        android:textColor="#222222"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"/>
+
+
+    </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

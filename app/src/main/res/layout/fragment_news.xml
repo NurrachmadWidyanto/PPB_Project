@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:background="@drawable/berita1"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:paddingVertical="10dp"
+            android:background="#000000"
+            android:alpha="0.5">
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:paddingVertical="10dp"
+            android:layout_marginHorizontal="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/knight_brush_demo"
+            android:text="Potensi Desa Sebagai Roket Penggerak Sektor Wisata Kabupaten Sampang"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rabu, 11 Maret 2020 pukul 07.28"
+                android:textColor="#DDDDDD"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:background="@color/bg2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:src="@drawable/feed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"
+                    android:fontFamily="@font/knight_brush_demo"
+                    android:paddingHorizontal="15dp"
+                    android:text="Berita Sampang"
+                    android:textColor="#222222"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+        </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/berita2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFE78">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
+                android:text="Sampang Raih Gelar Berbusana terbaik ..."
+                android:textColor="#222222"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="2dp"
+                android:text="10 Maret 2020 pukul 08.54"
+                android:textColor="@color/bg"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="2dp"
+                android:text="Bawa Batik Tanduk Majeng, Raki Kabupaten Sampang Sabet Kostum ..."
+                android:textColor="#222222"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

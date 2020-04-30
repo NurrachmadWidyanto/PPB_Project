@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PPB</string>
+    <string name="title_home">Home</string>
+    <string name="title_kategori">Kategori</string>
+    <string name="title_setting">Pengaturan</string>
+    <string name="title_news">Berita</string>
+    <string name="destinasi">Destinasi</string>
+</resources>

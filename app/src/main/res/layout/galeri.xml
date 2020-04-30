@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_nav"
+        android:theme="@style/ToolbarTheme">
+
+        <TextView
+            android:textAlignment="center"
+            android:text="Galeri"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:layout_below="@+id/songkem"
+            android:fontFamily="@font/knight_brush_demo"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+</RelativeLayout>

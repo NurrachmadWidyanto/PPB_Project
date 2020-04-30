@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_nav"
+        android:theme="@style/ToolbarTheme">
+
+        <TextView
+            android:textAlignment="center"
+            android:text="Destinasi"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:layout_below="@+id/songkem"
+            android:fontFamily="@font/knight_brush_demo"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:background="@drawable/berita1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+    <TextView
+        android:textAlignment="textStart"
+        android:id="@+id/text1"
+        android:text="Potensi Desa Sebagai Roket Penggerak Sektor Wisata Kabupaten Sampang"
+        android:textColor="#222222"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:textAlignment="textStart"
+        android:id="@+id/text2"
+        android:text='Rabu, 11 Maret 2020 pukul 07.28'
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:drawablePadding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"/>
+
+    <TextView
+        android:textAlignment="textStart"
+        android:text='Sampang memiliki potensi dan keunikan di masing masing desanya, yang kesemuanya butuh sentuhan tangan tangan kreativ untuk menjadi penggerak kegiatan ekonomi kreativ, guna memberikan motivasi dan arahan pengembangan desa menjadi penggerak sektor wisata berbasis masyarakat, pemerintah kabupaten sampang melalui disporabudpar menyelenggarakan kegiatan rapat kerja dan sosialisasi pembentukan desa wisata pada kamis, 5 maret 2020 di pantai lon malang-desa bire tengah kec. Sokobanah, dimana semua kepala desa dengan desa berpotensi, pokdarwis, pokmaswas dan Bumdes berpotensi se-Kab.Sampang hadir mengikuti arahan dari narasumber dan motivator desa Bpk. Udi Hartoko, Kepala Desa Pujon Kidul yang telah berhasil dan sukses mengelola BUMDES desanya melalui sektor wisata.'
+        android:textColor="#222222"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/songkemt1"/>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>
