@@ -7,38 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/layout_top"
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
-
-        <FrameLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <View
+            <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="vertical">
+
+        <com.denzcoskun.imageslider.ImageSlider
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_indicator"/>
+            app:auto_cycle="true"
+            app:delay="5"
+            android:id="@+id/slider"
+            app:period="2000"
+            app:error_image="@drawable/error"
+            app:placeholder="@color/bg"/>
 
-        <LinearLayout
-            android:id="@+id/pagesContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"/>
-
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -510,7 +504,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/bebek_songkem" />
+                    android:background="@color/bg" />
 
                 <TextView
                     android:textAlignment="center"
@@ -527,12 +521,14 @@
 
                 <TextView
                     android:textAlignment="textStart"
-                    android:text='Olahan bebek dengan bumbu khas "buje chabi" yang dibungkus daun pisang lalu dikukus dengan pelepah pisang dan menggunakan kayu bakar selama 4 jam menjadikan pamor makanan bebek yang berkolesterol tinggi menjadi bebek non  . . .'
+                    android:id="@+id/songkemt2"
+                    android:text='...'
                     android:textColor="#222222"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
+                    android:maxLength="220"
                     android:layout_below="@+id/songkemt1"/>
 
             </RelativeLayout>
@@ -801,8 +797,7 @@
 
         </HorizontalScrollView>
 
-    </LinearLayout>
-
-    </ScrollView>
-
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 </LinearLayout>

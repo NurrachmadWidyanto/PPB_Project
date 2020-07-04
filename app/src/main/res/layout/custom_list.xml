@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="2dp">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imgberita"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFE78">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/judul"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
+                android:text="Sampang Raih Gelar Berbusana terbaik ..."
+                android:textColor="#222222"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/waktu"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="2dp"
+                android:text="10 Maret 2020 pukul 08.54"
+                android:textColor="@color/bg"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/isi"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="2dp"
+                android:text="Bawa Batik Tanduk Majeng, Raki Kabupaten Sampang Sabet Kostum ..."
+                android:textColor="#222222"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

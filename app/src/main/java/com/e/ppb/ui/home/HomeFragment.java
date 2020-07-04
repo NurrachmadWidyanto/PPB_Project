@@ -6,9 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.e.ppb.BebekActivity;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+import com.e.ppb.TampilanActivity;
 import com.e.ppb.Berita1Activity;
 import com.e.ppb.Berita2Activity;
 import com.e.ppb.Berita3Activity;
@@ -18,16 +30,21 @@ import com.e.ppb.DownloadActivity;
 import com.e.ppb.EkonomiActivity;
 import com.e.ppb.EventActivity;
 import com.e.ppb.GaleriActivity;
+import com.e.ppb.List_Data;
 import com.e.ppb.PartnerActivity;
 import com.e.ppb.ProfilActivity;
 import com.e.ppb.R;
 import com.e.ppb.TerasiActivity;
-import com.e.ppb._sliders.FragmentSlider;
-import com.e.ppb._sliders.SliderIndicator;
-import com.e.ppb._sliders.SliderPagerAdapter;
-import com.e.ppb._sliders.SliderView;
+import com.smarteist.autoimageslider.SliderLayout;
+import com.smarteist.autoimageslider.SliderView;
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import androidx.annotation.Nullable;
@@ -36,12 +53,23 @@ import androidx.fragment.app.Fragment;
 
 public class HomeFragment extends Fragment {
 
-    private SliderPagerAdapter mAdapter;
-    private SliderIndicator mIndicator;
-    private SliderView sliderView;
-    private LinearLayout mLinearLayout;
     GridLayout gridLayout;
     CardView cardview, cardview2, cardview3, cardview4, cardview5, cardview6;
+    private ImageView imgdestinasi;
+    private TextView txtjudul, txtwaktu, txtisi;
+    String TAG_NOP = "kuliner";
+
+    private RequestQueue requestQueue;
+    private StringRequest stringRequest;
+
+    ArrayList<HashMap<String, String>> list_data;
+
+    SliderLayout sliderLayout;
+    private List<List_Data> list_dataList;
+
+    private JsonArrayRequest request;
+
+    private static final String HI = "http://192.168.137.1/PPB/getdata.php";
 
     @Nullable
     @Override
@@ -63,8 +91,65 @@ public class HomeFragment extends Fragment {
         setCardEvent(cardview5, 5);
         setCardEvent(cardview6, 6);
 
-        mLinearLayout = rootView.findViewById(R.id.pagesContainer);
-        //setupSlider();
+        ImageSlider imageSlider=rootView.findViewById(R.id.slider);
+
+        List<SlideModel> slideModels=new ArrayList<>();
+        slideModels.add(new SlideModel("http://192.168.137.1/PPB/images/bebek_songkem.jpg"));
+        slideModels.add(new SlideModel("http://192.168.137.1/PPB/images/terasi.jpg"));
+        slideModels.add(new SlideModel("https://picsum.photos/id/892/300/200"));
+        slideModels.add(new SlideModel("https://picsum.photos/id/891/300/200"));
+        imageSlider.setImageList(slideModels,true);
+
+        String url = "http://192.168.137.1/PPB/getdata.php";
+
+        imgdestinasi = (ImageView)rootView.findViewById(R.id.songkem);
+        txtjudul= (TextView)rootView.findViewById(R.id.songkemt1);
+        //txtwaktu = (TextView)rootView.findViewById(R.id.);
+        txtisi = (TextView)rootView.findViewById(R.id.songkemt2);
+
+        requestQueue = Volley.newRequestQueue(getActivity());
+
+        list_data = new ArrayList<HashMap<String, String>>();
+
+        stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("image");
+                    for (int a = 0; a < jsonArray.length(); a ++){
+                        JSONObject json = jsonArray.getJSONObject(a);
+                        HashMap<String, String> map  = new HashMap<String, String>();
+                        map.put("id", json.getString("id"));
+                        map.put("image", json.getString("image"));
+                        map.put("judul", json.getString("judul"));
+                        map.put("waktu", json.getString("waktu"));
+                        map.put("isi", json.getString("isi"));
+                        list_data.add(map);
+                    }
+                    Glide.with(getActivity())
+                            .load(list_data.get(0).get("image"))
+                            .override(600, 200)
+                            .fitCenter()
+                            .into(imgdestinasi);
+                    txtjudul.setText(list_data.get(0).get("judul"));
+                    //txttipe.setText(list_data.get(0).get("waktu"));
+                    txtisi.setText(list_data.get(0).get("isi"));
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        requestQueue.add(stringRequest);
+
         return rootView;
     }
 
@@ -117,16 +202,17 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     if (a==1) {
-                        Intent intent = new Intent(getActivity(), BebekActivity.class);
-                        startActivity(intent);
+                        Intent intent = new Intent(getActivity(), TampilanActivity.class);
+                        intent.putExtra(TAG_NOP, a);
                     }
                     else if (a==2) {
-                        Intent intent = new Intent(getActivity(), BebekActivity.class);
+                        Intent intent = new Intent(getActivity(), TampilanActivity.class);
+                        intent.putExtra(TAG_NOP, a);
                         startActivity(intent);
                     }
                     else if (a==3) {
                         Intent intent = new Intent(getActivity(), TerasiActivity.class);
-                        startActivity(intent);
+                        intent.putExtra(TAG_NOP, a);
                     }
                     else if (a==4) {
                         Intent intent = new Intent(getActivity(), Berita1Activity.class);
@@ -144,18 +230,4 @@ public class HomeFragment extends Fragment {
             });
         }
 
-    private void setupSlider() {
-        sliderView.setDurationScroll(800);
-        List<Fragment> fragments = new ArrayList<>();
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-1.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-2.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-3.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-4.jpg"));
-
-        mAdapter = new SliderPagerAdapter(getFragmentManager(), fragments);
-        sliderView.setAdapter(mAdapter);
-        mIndicator = new SliderIndicator(getActivity(), mLinearLayout, sliderView, R.drawable.indicator_circle);
-        mIndicator.setPageCount(fragments.size());
-        mIndicator.show();
-    }
 }

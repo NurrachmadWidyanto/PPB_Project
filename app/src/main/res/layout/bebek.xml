@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -33,10 +32,10 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/bebek"
         android:layout_width="match_parent"
         android:layout_height="192dp"
-        android:background="@drawable/bebek_songkem" />
+        android:background="@color/bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +45,7 @@
     <TextView
         android:textAlignment="center"
         android:id="@+id/songkemt1"
-        android:text="Bebek Songkem Pak salim"
+        android:text=" . . ."
         android:textColor="#222222"
         android:textSize="22sp"
         android:layout_width="wrap_content"
@@ -57,7 +56,8 @@
 
         <TextView
         android:textAlignment="textStart"
-        android:text='0.96 Km'
+            android:id="@+id/songkemt2"
+        android:text=' . . .'
         android:textColor="#888888"
         android:textSize="14sp"
         android:drawableLeft="@drawable/lokasi"
@@ -69,7 +69,8 @@
 
         <TextView
             android:textAlignment="textStart"
-            android:text='07:00 - 22:00'
+            android:text=' . . .'
+            android:id="@+id/songkemt3"
             android:textColor="#7CB37F"
             android:textSize="14sp"
             android:drawableLeft="@drawable/jam"
@@ -81,8 +82,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/songkemt4"
             android:layout_below="@+id/songkemt1"
-            android:text='Jl. Trunojoyo No.9A, Rw. III \n Rong Tengah - Kec. Sampang \n Kab. Sampang \n 69216'
+            android:text=' . . .'
             android:textAlignment="textStart"
             android:textColor="#E18A45"
             android:paddingVertical="10dp"
@@ -90,7 +92,8 @@
 
     <TextView
         android:textAlignment="textStart"
-        android:text='Olahan bebek dengan bumbu khas "buje chabi" yang dibungkus daun pisang lalu dikukus dengan pelepah pisang dan menggunakan kayu bakar selama 4 jam menjadikan pamor makanan bebek yang berkolesterol tinggi menjadi bebek non kolesterol yang sedang populer'
+        android:id="@+id/songkemt5"
+        android:text=' . . .'
         android:textColor="#222222"
         android:textSize="14sp"
         android:layout_width="wrap_content"
